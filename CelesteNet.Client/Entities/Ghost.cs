@@ -9,7 +9,7 @@ using Monocle;
 
 namespace Celeste.Mod.CelesteNet.Client.Entities {
     [Tracked]
-    public class Ghost : Actor, ITickReceiver {
+    public class Ghost : Entity, ITickReceiver {
 
         public CelesteNetClientContext? Context;
 
@@ -90,8 +90,6 @@ namespace Celeste.Mod.CelesteNet.Client.Entities {
             OpacityAdjustAlpha();
 
             Dead = false;
-            AllowPushing = false;
-            SquishCallback = null;
 
             Tag = Tags.Persistent | Tags.PauseUpdate | Tags.TransitionUpdate;
         }
